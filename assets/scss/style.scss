@@ -1,0 +1,166 @@
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import '../css/lib/fontawesome/web-fonts-with-css/scss/fa-solid';
+@import '../css/lib/fontawesome/web-fonts-with-css/scss/fa-regular';
+@import '../css/lib/fontawesome/web-fonts-with-css/scss/fa-brands';
+@import '../css/lib/fontawesome/web-fonts-with-css/scss/fontawesome';
+
+@import "mixins";
+@import "variables";
+@import "text";
+@import "navigation";
+@import "homepage";
+
+
+/**
+ * Common
+ */
+body{
+	background-color: #fff;
+	font-size: 18px;
+	line-height: 24px;
+	color: $black;
+	font-weight: 400;
+}
+a{
+	color: $blue;
+	cursor: pointer;
+	&:hover{
+		color: $yellow;
+		text-decoration: none;
+	}
+}
+hr{
+	border-top: 1px solid $gray;
+	margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+.btn-custom{
+	border-radius: 0;
+	background-color: $blue;
+	color: $white;
+	&:hover{
+		background-color: lighten($blue, 10%);
+		color: $white;
+	}
+}
+.edit{
+	border-radius: 0;
+	float: right;
+	a{
+		color: $white;
+	}
+}
+.project-types{
+	padding-left: 20px;
+}
+
+
+/**
+ * Overrides
+ */
+div.wpcf7 .ajax-loader{
+	right: -16px;
+	position: absolute;
+}
+
+
+/**
+ * Sub-header
+ */
+.sub-header{
+	padding: 15px 0;
+	font-size: .8rem;
+	background-color: $dark-blue;
+	color: $white;
+	a{
+		color: $white;
+	}
+	a:hover{
+		color: $yellow;
+	}
+	i{
+		margin-left: 2rem;
+	}
+	.sub-header-text{
+		width: 100%;
+		div{
+			display: inline-block;
+		}
+	}
+}
+
+
+/**
+ * Pagination
+ */
+.page-link, .page-link:hover{
+	color: $blue;
+}
+.page-link.current{
+ 	background-color: $gray;
+ 	color: $blue;
+ }
+
+
+/**
+ * Footer
+ */
+footer{
+	.footer-title{
+		font-weight: 400;
+		color: $black;
+	}
+
+	ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	li {
+		padding-left: 1rem; 
+		text-indent: -.7rem;
+	}
+	li::before {
+		content: "• ";
+		color: $blue;
+	}
+}
+
+
+/**
+ * Page title
+ */
+.titlebar{
+	padding: 2rem;
+	text-align: center;
+	margin-bottom: 2rem;
+	background-color: $blue;
+	background-image: url('../img/grid.png');
+	background-repeat: repeat;
+	opacity: 0.9;
+}
+.title{
+	font-weight: lighter;
+	color: $white;
+	width: 100%;
+}
+
+
+@media only screen and (max-width: 768px){
+	.container{
+		padding-right: 2rem;
+		padding-left: 2rem;
+	}
+	.sub-header{
+		.sub-header-text{
+			div{
+				display: block;
+				text-align: center;
+			}
+		}
+	}
+	.titlebar{
+		padding: 1rem;
+	}
+}

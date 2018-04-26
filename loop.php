@@ -1,0 +1,28 @@
+<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+
+	<li class="media">
+		<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
+			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+				<?php the_post_thumbnail('medium', array( 'class' => 'img-fluid mr-4 mb-4')); ?>
+			</a>
+		<?php endif; ?>
+		
+		<div class="media-body">
+			<h2 class="mb-2"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+			<small>Posted on: <?php the_time('F j, Y'); ?> <?php //the_time('g:ia'); ?></small>
+			<?php collado_excerpt(); ?>
+			<?php edit_post_link('Edit', '<p>', '</p>', '', 'btn btn-success edit'); ?>
+		</div>
+	</li>
+
+	<?php if($wp_query->current_post +1 != $wp_query->post_count) : ?>
+    	<hr>
+	<?php endif; ?>
+
+<?php endwhile; ?>
+
+<?php else: ?>
+	<article>
+		<h2><?php _e( 'Coming Soon', 'collado' ); ?></h2>
+	</article>
+<?php endif; ?>

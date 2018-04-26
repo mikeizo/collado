@@ -1,0 +1,134 @@
+/**
+ * Homepage carousel
+ */
+.carousel{
+	.carousel-caption{
+		top: 35px;
+		max-width: 1140px;
+		margin: 0 auto;
+	}
+	.carousel-item .slide{
+		height: 400px;
+		width: 100%;
+	}
+	.mbe{
+		position: absolute;
+		right: 0;
+		top: 15px;
+		img{
+			height: 135px;
+		}
+	}
+	.headline{
+		display: block;
+		font-size: 4.5rem;
+		line-height: 4.5rem;
+		margin-bottom: 25px;
+		text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.55);
+	}
+	.headline-left{
+		text-align: left;
+		@include fadeInDown(0s);
+	}
+	.headline-sub{
+		text-align: center;
+		@include fadeInDown(1s);
+	}
+	.headline-right{
+		text-align: right;
+		@include fadeInDown(2s);
+	}
+	.yellow-block {
+		display: inline-block;
+		padding: 5px 25px 15px;
+		background: rgba(250, 200, 50, 0.75);
+		box-shadow: 0px 0px 15px 0px;
+		@include fadeInDown(1s);
+	}
+	.carousel-control-prev, .carousel-control-next{
+		width: 2rem;
+	}
+}
+
+
+/**
+ * Services blocks
+ */
+.services{
+	.services-title{
+		font-weight: lighter;
+		text-align: center;		
+		&:after{
+			content: ' ';
+			display: block;
+			margin: 35px auto;
+			width: 160px;
+			height: 2px;
+			bottom: -25px;
+			background-color: $blue;
+		}
+	}
+	.services-block{
+		text-align: center;
+		padding: 2rem 2rem 0;
+		@include fade();
+		i{
+			font-size: 6rem;
+			color: $blue;
+		}
+		svg{
+			fill: $blue;
+			max-height: 98.4px;
+		}
+		.services-title-list{
+			margin: 15px 0;
+			font-size: 1.2rem;
+			color: $black;
+		}
+
+		&:hover{
+			@include box-shadow();
+			@include scale();
+			background-color: $blue;
+			color: $white;
+			i, .services-title-list{
+				color: $white;
+			}
+			svg{
+				fill: $white;
+			}
+		}
+	}
+}
+
+
+@media only screen and (max-width: 768px){
+	.carousel{
+		.carousel-caption{
+			top: 10px;
+		}
+		.carousel-item .slide{
+			width: auto;
+		}
+		.mbe{
+			position: relative;
+			width: 100%;
+			text-align: center;
+			top: 0;
+			img{
+				height: 100px;
+			}
+		}
+		.headline-left, .headline-right{
+			text-align: center;
+		}
+		.headline{
+			font-size: 2rem;
+			line-height: 2rem;
+		}
+		.yellow-block {
+			padding: 0 .5rem;
+		}
+		
+	}
+}
